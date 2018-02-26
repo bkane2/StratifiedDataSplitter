@@ -51,4 +51,12 @@ The program splits the data into respective sets using the following algorithm:
 
 ### Runtime analysis ###
 
-T
+The first stage of the algorithm, separating the data into strata, checks each entry in the dataset and adds it to an existing series if the series for that combination of values has been created, or creates a new series otherwise. Thus, this stage has expected runtime `O(N)`, if there are `N` entries in the original dataset.
+
+The second stage of the algorithm performs the `split` operation on each strata. Assuming that NumPy `split` is a constant-time operation and the number of strata is a constant *v<sub>0</sub>v<sub>1</sub>...v<sub>n</sub> << N*, then this stage has expected runtime `O(1)`.
+
+The third stage of the algorithm uses `concat` to merge the similar sets across each strata. Again assuming that Pandas `concat` is a constant-time operation and the number of concatenations needed is a constant *3(v<sub>0</sub>v<sub>1</sub>...v<sub>n</sub>) << N*, then this stage has expected runtime `O(1)`.
+
+The fourth stage of the algorithm shuffles each final set. Since there are `f*N` entries in each set, for a constant `0<f<1`, and shuffling a list of length `L` requires `O(L)` runtime, then this stage has expected runtime `O(N)`.
+
+Thus, the overall expected runtime of this algorithm is `O(N)+O(1)+O(1)+O(N) = O(N)`.
