@@ -21,9 +21,9 @@ To run, move a CSV file containing initial dataset into the same directory as `s
 python3 split_data.py dataset var [var ...] [--distr f f f]
 ```
 
-Where `dataset` is the filename of the .csv file containing your data, followed by one or more `var` names indicating variables in the dataset to be used in stratified sampling. Optionally, a distribution of data to training, testing, and validation sets can be specified using the flag `--distr`, followed by three fractions `f` between 0 and 1, adding up to 1. The default distribution is 0.70 training set, 0.15 testing set, and 0.15 validation set.
+Where `dataset` is the filename of the .csv file containing your data, followed by one or more `var` names indicating categorical variables in the dataset to be used in stratified sampling. Optionally, a distribution of data to training, testing, and validation sets can be specified using the flag `--distr`, followed by three fractions `f` between 0 and 1, adding up to 1. The default distribution is 0.70 training set, 0.15 testing set, and 0.15 validation set.
 
-For example, if you have a dataset named `testdata.csv`, in which there are unevenly distributed variables `var1` and `var3`, you can split the data by running the following command:
+For example, if you have a dataset named `testdata.csv`, in which there are categorical variables `var1` and `var3`, you can split the data while preserving the proportions of `var1` and `var3` by running the following command:
 
 ```shell
 python3 split_data.py testdata.csv var1 var3
