@@ -45,7 +45,9 @@ The program splits the data into respective sets using the following algorithm:
 
 2. Each strata is independently split into training, testing, and validation sets. This is done using the optimized NumPy [split](https://docs.scipy.org/doc/numpy/reference/generated/numpy.split.html) operation, given a partition interval. This interval is by default `[0.70L, 0.85L]`, where `L` is the number of entries in each strata. Each strata is thus separated into the following three sets: `[0, 0.70L)`, `[0.70L, 0.85L)`, and `[0.85L, L)`. 
 
-3. 
+3. The training sets of each strata are grouped together. All training sets are then merged into one final training set using the Pandas [concat](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.concat.html) function. This is repeated for the testing and validation sets.
+
+4. Since entries in the final sets are ordered according to values of the stratified variables, the final sets are then shuffled. The training, testing, and validation sets are then written to .csv files.
 
 ### Runtime analysis ###
 
