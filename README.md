@@ -41,7 +41,7 @@ Note that if the program is run twice on the same dataset, the previous result w
 
 The program splits the data into respective sets using the following algorithm:
 
-1. The dataset is split into strata for each possible combination of values of the given variable. For example, if preserving the proportions of `var1={A,B}` and `var3={a,b,c}`, the data is grouped into 6 strata represented by the values `(A,a), (A,b), (A,c), (B,a), (B,b), (B,c)`. More generally, if `i` variables are given as input, with each having `v<sub>i</sub>` values, 
+1. The dataset is split into strata for each possible combination of values of the given variable. For example, if preserving the proportions of `var1={A,B}` and `var3={a,b,c}`, the data is grouped into 6 strata represented by the values `(A,a), (A,b), (A,c), (B,a), (B,b), (B,c)`. More generally, if *n* variables are given as input, with each having *v<sub>i</sub>* values, then the dataset is split into *Π<sub>i=0</sub><sup>n</sup> v<sub>i</sub>* strata.
 
 ### Runtime analysis ###
 
