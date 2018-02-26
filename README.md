@@ -7,7 +7,7 @@ This program requires the following Python installation and libraries:
 * [Pandas](https://pandas.pydata.org) v0.22.0+
 * [NumPy](http://www.numpy.org) v1.14.0+
 
-The Pandas and NumPy libraries are used for their highly efficient data structures and utility functions (for instance, [groupby](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html)), which are implemented in optimized CPython code allowing for speedy computation. These dependencies can be easily installed with `pip` through the following command:
+The Pandas and NumPy libraries are used for their highly efficient data structures and basic functions (for instance, [groupby](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.groupby.html)), which are implemented in optimized CPython code allowing for speedy computation. These dependencies can be easily installed with `pip` through the following command:
 
 ```shell
 pip3 install numpy pandas
