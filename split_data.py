@@ -1,5 +1,6 @@
 #
-#
+# Author: Benjamin Kane
+# https://github.com/bkane2/StratifiedDataSplitter
 #
 
 import splitter as sp
@@ -7,7 +8,7 @@ import pandas as pd
 import argparse
 import os
 
-# Usage: split_data.py [-h] dataset var [var ...]
+# Usage: split_data.py [-h] [--distr f f f] dataset var [var ...]
 parser = argparse.ArgumentParser(
   description='Split dataset into training, testing, and validation sets using stratified sampling on an indefinite subset of attributes.')
 parser.add_argument('dataset', type=argparse.FileType('r'),

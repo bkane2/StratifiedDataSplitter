@@ -1,3 +1,8 @@
+#
+# Author: Benjamin Kane
+# https://github.com/bkane2/StratifiedDataSplitter
+#
+
 import pandas as pd
 import numpy as np
 
