@@ -59,4 +59,4 @@ The third stage of the algorithm uses `concat` to merge the similar sets across 
 
 The fourth stage of the algorithm shuffles each final set. Since there are `f*N` entries in each set, for a constant `0<f<1`, and shuffling a list of length `L` requires `O(L)` runtime, then this stage has expected runtime `O(N)`.
 
-Thus, the overall expected runtime of this algorithm is `O(N)+O(1)+O(1)+O(N) = O(N)`.
+Thus, the overall expected runtime of this algorithm is `O(N) + O(1) + O(1) + O(N) = O(N)`.
